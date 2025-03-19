@@ -14,11 +14,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Brain, Home, Info, Menu, Phone, Puzzle } from "lucide-react";
-import {
-  Drawer,
-  DrawerContent,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
+import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 
 const routes = [
   {
@@ -48,10 +44,9 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center max-w-7xl mx-auto">
+      <div className="container flex h-16 items-center max-w-9xl mx-auto">
         <Link href="/" className="flex items-center space-x-2 mx-4">
-          <Brain className="h-6 w-6" />
-          <span className="font-bold">OCIMUM</span>
+          <span className="font-bold size-md">OCIMUM</span>
         </Link>
         <NavigationMenu className="mx-6 hidden md:flex">
           <NavigationMenuList>
@@ -76,39 +71,39 @@ export function Navbar() {
 
         {/* Mobile Navigation (Drawer) */}
         <div className="flex flex-1 items-center justify-end">
-
-
           <div className="flex items-center space-x-4 mr-2">
             <ThemeToggle />
             <Button asChild>
               <Link href="/contact">Register as a Doctor</Link>
             </Button>
           </div>
-					          <Drawer className="md:hidden ">
-            <DrawerTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle Menu</span>
-              </Button>
-            </DrawerTrigger>
-            <DrawerContent>
-              <div className="flex flex-col mt-4">
-                {routes.map((route) => (
-                  <Link
-                    key={route.href}
-                    href={route.href}
-                    className={cn(
-                      "flex items-center space-x-2 p-4 text-base font-medium",
-                      pathname === route.href && "bg-accent"
-                    )}
-                  >
-                    <route.icon className="h-5 w-5" />
-                    <span>{route.label}</span>
-                  </Link>
-                ))}
-              </div>
-            </DrawerContent>
-          </Drawer>
+          <div className="md:hidden">
+            <Drawer>
+              <DrawerTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Toggle Menu</span>
+                </Button>
+              </DrawerTrigger>
+              <DrawerContent>
+                <div className="flex flex-col mt-4">
+                  {routes.map((route) => (
+                    <Link
+                      key={route.href}
+                      href={route.href}
+                      className={cn(
+                        "flex items-center space-x-2 p-4 text-base font-medium",
+                        pathname === route.href && "bg-accent"
+                      )}
+                    >
+                      <route.icon className="h-5 w-5" />
+                      <span>{route.label}</span>
+                    </Link>
+                  ))}
+                </div>
+              </DrawerContent>
+            </Drawer>
+          </div>
         </div>
       </div>
     </header>
