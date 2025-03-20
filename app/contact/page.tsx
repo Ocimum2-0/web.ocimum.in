@@ -26,8 +26,8 @@ export default function ContactPage() {
           Get in Touch
         </h1>
         <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-          Have questions about OCIMUM? We're here to help. Fill out the form below
-          and we'll get back to you shortly.
+          Have questions about OCIMUM? We&apos;re here to help. Fill out the form below
+          and we&apos;ll get back to you shortly.
         </p>
       </motion.div>
 
@@ -66,7 +66,7 @@ export default function ContactPage() {
             <CardHeader>
               <CardTitle>Send us a Message</CardTitle>
               <CardDescription>
-                Fill out the form below and we'll respond within 24 hours
+                Fill out the form below and we&apos;ll respond within 24 hours
               </CardDescription>
             </CardHeader>
             <CardContent>
