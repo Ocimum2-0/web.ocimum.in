@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://web.ocimum.in
+
+# Sitemaps
+Sitemap: https://web.ocimum.in/sitemap.xml
